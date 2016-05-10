@@ -4,5 +4,9 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 get '/' do
-	erb :index			
+	erb :index
+end
+
+get '/about' do
+	erb :about
 end
