@@ -64,3 +64,22 @@ function update_orders_button()
   var text = 'Cart('+ cart_get_number_of_items() + ')';
   $('#orders_button').val(text);
 }
+function get_peperoni_count()
+{
+  var key = 'product_2';
+  var peperoni_count = window.localStorage.getItem(key);
+  return peperoni_count;
+}
+
+function get_hawajjan_count()
+{
+  var key = 'product_1';
+  var hawajjan_count = window.localStorage.getItem(key);
+  return hawajjan_count;
+}
+function get_vegetarian_count()
+{
+  var key = 'product_3';
+  var vegetarian_count = window.localStorage.getItem(key);
+  return vegetarian_count;
+}

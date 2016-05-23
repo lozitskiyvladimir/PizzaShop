@@ -22,6 +22,10 @@ get '/about' do
 end
 
 get '/cart' do
+	@products = Product.all
+	erb :cart
+end
 
-		erb 'hello!'
+post '/cart' do
+	erb 'hello!'
 end
