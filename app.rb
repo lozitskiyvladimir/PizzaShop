@@ -36,7 +36,7 @@ end
 post '/cart' do
 	orders_input = params[:orders]
 	@orders = parse_orders_input orders_input
-	erb "hello!#{@orders.inspect}"
+	erb :cart
 end
 
 # Получаем из строки вида "product_1=4,product_2=1,product_3=10,"
