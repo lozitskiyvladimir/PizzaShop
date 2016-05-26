@@ -13,6 +13,10 @@ class Product < ActiveRecord::Base
 
 end
 
+class Order < ActiveRecord::Base
+
+end
+
 
 #Получаем в браузере все пиццы из бд
 get '/' do
