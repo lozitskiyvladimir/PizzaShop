@@ -17,11 +17,11 @@ class Order < ActiveRecord::Base
 
 end
 
-
 #Получаем в браузере все пиццы из бд
 get '/' do
 	@products = Product.all
 	erb :index
+
 end
 
 get '/about' do
@@ -29,10 +29,11 @@ get '/about' do
 end
 
 #Получаем в браузере все пиццы из бд
-get '/cart' do
-	@products = Product.all
-	erb :cart
-end
+# get '/cart' do
+#
+#
+# 	erb :cart
+# end
 
 # Получаем данные из корзины
 # вида "product_1=4,product_2=1,product_3=10,"и преобразуем в
@@ -68,4 +69,17 @@ def parse_orders_input orders_input
 
     end
       return arr
+end
+get '/place_order' do
+	@all_orders = Order.all
+	erb :orders
+end
+#Принять данные и записать в базу данных
+post '/place_order' do
+	@all_orders = Order.all
+	newOrder = Order.new(params[:order])
+	newOrder.save
+	erb :orders
+	# erb :order_placed
+
 end

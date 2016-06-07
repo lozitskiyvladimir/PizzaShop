@@ -1,0 +1,39 @@
+<h2>Orders</h2>
+
+<%= @all_orders%>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+        <th></th>
+        <th>Products</th>
+        <th>Count</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </tr>
+  </thead>
+  <tbody>
+
+    <% @all_orders.each do |order|%>
+
+    <tr>
+      <th scope="row"><%= order.id%></th>
+      <td><%= order.orders_input%></td>
+      <td></td>
+      <td><%= order.name%></td>
+      <td><%= order.phone%></td>
+      <td><%= order.address%></td>
+
+    </tr>
+
+    <%end%>
+    <script type="text/javascript">
+    $(function()
+    {
+      window.localStorage.clear();
+    });
+    </script>
+
+   </tbody>
+ </table>

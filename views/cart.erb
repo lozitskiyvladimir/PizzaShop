@@ -54,6 +54,7 @@
       <label>Delivery address:</label>
       <textarea  name="order[address]" class="form-control" placeholder="Delivery address" ></textarea>
     </div>
-        <button type="submit" class="btn btn-success btn-lg">Place this order</button>
+        <button type="submit" class="btn btn-success btn-lg" onclick="orderWas_accepted()">Place this order</button>
+        <button  class="btn btn-danger btn-lg" onclick="return cancel_order()">Cancel</button>
 
 </form>
