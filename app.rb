@@ -82,7 +82,8 @@ get '/place_order' do
 end
 #Принять данные и записать в базу данных
 post '/place_order' do
-	@all_orders = Order.all
+	# display all orders by desc order.
+	@all_orders = Order.order('created_at DESC')
 	newOrder = Order.new(params[:order])
 	newOrder.save
 	erb :orders
