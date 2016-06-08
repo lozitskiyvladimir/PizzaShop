@@ -1,7 +1,7 @@
 
 // add to localStorage 3 keys like this  'product_1','product_2','product_3',
 //and increase its values on 1
-//through pressing on button under each pizza 
+//through pressing on button under each pizza
 
 
 function add_to_cart(id)
@@ -38,7 +38,7 @@ function cart_get_orders()
 
 }
 
-//Pass the string to hidden textarea ,that send date to server
+''//Pass the string to hidden textarea ,that send date to server
 function update_orders_input()
 {
   // initialize "order" by string like this
@@ -94,6 +94,8 @@ function cancel_order()
 // updete number on button
   update_orders_input();
   update_orders_button();
+// by selector i acces to control and display message 'You cart...'
+   $("#cart").text('Your cart is now empty');
   // it's done, that button with cancel name  don't send  date from form to server
   return false;
 }
