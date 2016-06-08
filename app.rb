@@ -38,11 +38,17 @@ end
 # Получаем данные из корзины
 # вида "product_1=4,product_2=1,product_3=10,"и преобразуем в
 # массив вида  [["1", "4"], ["2", "1"], ["3", "10"]],
-#заменить каждый 0 индекс массива(который есть id) обектом с этим id
-#в итоге получить структуру типа [[obj,count],[obj,count],[obj,count]]
 post '/cart' do
 	@orders_input = params[:orders]
 	@items = parse_orders_input @orders_input
+#if cart is empty,than output page cart_is_empty
+	if @items.length == 0
+		return erb :cart_is_empty
+	end
+
+	#заменить каждый 0 индекс массива(который есть id) обектом с этим id
+	#в итоге получить структуру типа [[obj,count],[obj,count],[obj,count]]
+
 	@items.each do |item|
 		item[0] = Product.find(item[0])
 	end
